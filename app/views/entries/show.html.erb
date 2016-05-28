@@ -1,0 +1,29 @@
+<%# provide(:title, @entry.title) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= link_to @user.name, @user %>
+      </h1>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% unless @entry.nil? %>
+      <h3>
+        <%#= @entry.title %>
+      </h3>
+      <ol class="entries">
+        <%#= render 'entries/entry_content', entry: @entry %>
+        <span class="body"><p><%= @entry.content %></p></span>
+        <span class="timestamp">
+          Posted on <%= @entry.created_at.strftime("%B %d at %I:%M %p") %>.
+        </span>
+      </ol>
+    <% end %>
+    <%= render 'entries/entry_comment_input' %>
+  </div>
+</div>

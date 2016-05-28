@@ -1,0 +1,15 @@
+<li id="entry-<%= entry.id %>">
+  <%= link_to gravatar_for(entry.user, size: 50), entry.user %>
+  <span class="user"><%= link_to entry.user.name, entry.user %></span>
+  <span class="content"><%= entry.content %></span>
+  <%#= link_to "see more", [entry.user, entry] %>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(entry.created_at) %> ago.
+    
+  </span>
+  <button type="button" class="btn btn-success btn-sm"><span style="color: white;"><%= link_to 'Read', entry %></span></button>
+  <!-- <textarea rows="3"></textarea>
+  <button type="button" class="btn btn-success btn-sm">Comment</button> -->
+  <%#= render 'comments/comment' %>
+  
+</li>
